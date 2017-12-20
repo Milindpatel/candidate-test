@@ -5,7 +5,6 @@ import 'rxjs/add/operator/toPromise';
 export class RugService {
   private apiUrl = 'http://localhost:3001/api/';
   showAddRugBox: boolean = true;
-
   constructor(private http: Http) { }
   getRugs(): Promise<any> {
     return this.http.get(this.apiUrl)
@@ -24,6 +23,20 @@ export class RugService {
       .toPromise()
       .then(this.handleData)
       .catch(this.handleError)
+  }
+  updateRug(rug: any): Promise<any> {
+    return this.http
+      .put(this.apiUrl, rug)
+      .toPromise()
+      .then(this.handleData)
+      .catch(this.handleData);
+  }
+  deleteRug(rug: any): Promise<any> {
+    return this.http
+      .delete(this.apiUrl + rug._id)
+      .toPromise()
+      .then(this.handleData)
+      .catch(this.handleError);
   }
   private handleData(res: any) {
     let body = res.json();
