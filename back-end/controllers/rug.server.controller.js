@@ -53,6 +53,6 @@ export const deleteRug = (req, res) => {
             return res.json({ 'success': false, 'message': err });
         }
         console.log(rug);
-        return res.json({ 'success': true, 'message': 'Rug deleted successfully' });
+        return res.json({ 'success': true, 'message': 'Rug deleted successfully' , rug});
     })
 }

@@ -51,11 +51,10 @@ export class RugListComponent implements OnInit {
   }
   DeleteRug(rug: any): void {
     if (!rug) { return; }
-    console.log(rug._id)
     this.rugService.deleteRug(rug)
       .then(td => {
-        
-        const filteredRugs = this.rugs.filter(t => td.success);
+        console.log(td);
+        const filteredRugs = this.rugs.filter(t => t._id !== td.rug._id);
         this.apiMessage = td.message;
         this.rugs = filteredRugs;
       })
