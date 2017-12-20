@@ -19,6 +19,11 @@
           <a routerLink="/rugs">Rugs</a>
         </li>
       </ul>
+      <ul *ngIf="routeUrl == rugs" class="nav navbar-nav navbar-right">
+        <li>
+          <a (click)="showAddRugBox($event)" href="#">Add Rug</a>
+        </li>
+      </ul>
     </div>
     <!--/.nav-collapse -->
   </div>

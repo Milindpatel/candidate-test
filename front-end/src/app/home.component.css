@@ -16,3 +16,21 @@
 .box > .icon > .info > .more a { font-family: "Robot",sans-serif !important; font-size: 12px; color: #222; line-height: 12px; text-transform: uppercase; text-decoration: none;cursor: pointer;}
 .box > .icon:hover > .info > .more > a { color: #fff; padding: 6px 8px; background-color: #63B76C; }
 .box .space { height: 30px; }
+
+.AddRugBox{
+  width: 50%;
+  margin: 20px auto;
+  border: 2px solid #EE6E73;
+  padding: 10px;
+}
+.AddRugBox h4{
+  background-color: #EE6E73;
+  color: white;
+  padding: 5px;
+}
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}

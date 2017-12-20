@@ -4,6 +4,8 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class RugService {
   private apiUrl = 'http://localhost:3001/api/';
+  showAddRugBox: boolean = true;
+
   constructor(private http: Http) { }
   getRugs(): Promise<any> {
     return this.http.get(this.apiUrl)
@@ -13,6 +15,12 @@ export class RugService {
   }
   getRug(id: string): Promise<any> {
     return this.http.get(this.apiUrl + id)
+      .toPromise()
+      .then(this.handleData)
+      .catch(this.handleError)
+  }
+  createRug(rug: any): Promise<any> {
+    return this.http.post(this.apiUrl, rug)
       .toPromise()
       .then(this.handleData)
       .catch(this.handleError)

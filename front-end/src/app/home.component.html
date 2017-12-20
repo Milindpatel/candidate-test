@@ -1,3 +1,24 @@
+<div align="center" class="AddRugBox" [hidden]="rugService.showAddRugBox">
+    <h4>Add New Rug</h4>
+    <form (ngSubmit)="AddRug(rug);rugForm.reset()" #rugForm="ngForm">
+        <div class="form-group">
+            <label for="rugText">Rug:</label>
+            <input type="text" [(ngModel)]="rug.rugText" #rugtext="ngModel" class="form-control" name="rugText" id="rugText" required
+            />
+            <div [hidden]="rugtext.valid || rugtext.pristine" class="alert alert-danger">
+                Rug is required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="rugDesc">Description:</label>
+            <textarea class="form-control" [(ngModel)]="rug.rugDesc" #rugdesc="ngModel" name="rugDesc" id="rugDesc" required></textarea>
+            <div [hidden]="rugdesc.valid || rugdesc.pristine" class="alert alert-danger">
+                Description is required
+            </div>
+        </div>
+        <button type="submit" [disabled]="!rugForm.form.valid" class="btn btn-success btn-block">Submit</button>
+    </form>
+</div>
 <div class="container">
     <div class="starter-template">
         <h1>Home Page</h1>
