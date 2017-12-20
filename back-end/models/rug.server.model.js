@@ -4,7 +4,7 @@ var Schema = mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    rugName: String,
-    rugText: String
+    rugText: String,
+    rugDesc : String
 });
 export default mongoose.model('Rug', Schema);
