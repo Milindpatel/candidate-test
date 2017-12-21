@@ -5,6 +5,7 @@
 #####  How to run?:
 
 * install all dependencies using ` npm install `
+* Start mongodb server through ` mogod ` command
 * Go to the folder back-end and run node server 
 
     
