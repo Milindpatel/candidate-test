@@ -16,10 +16,9 @@
 * then go to front-end folder and run angular app
 
     
-        cd ..
         cd front-end
         ng serve --open
 
     
-### If you get any question send me a e-mail `milindpatel4416@gmail.com` 
+### If you get any question send me an e-mail `milindpatel4416@gmail.com` 
 ### Thank you
